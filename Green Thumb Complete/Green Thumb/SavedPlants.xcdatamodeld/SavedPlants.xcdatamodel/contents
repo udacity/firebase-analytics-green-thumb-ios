@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GardeningLevel" representedClassName="GardeningLevel" syncable="YES" codeGenerationType="class">
+        <attribute name="gardeningLevel" optional="YES" attributeType="String" minValueString="1" maxValueString="5" syncable="YES"/>
+    </entity>
+    <entity name="PurchasedPlant" representedClassName="PurchasedPlant" syncable="YES" codeGenerationType="class">
+        <attribute name="numberPlantsSaved" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="plantDetails" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plantName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plantPrice" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="SavedPlant" representedClassName="SavedPlant" syncable="YES" codeGenerationType="class">
+        <attribute name="gardeningLevel" optional="YES" attributeType="String" defaultValueString="You have not shared your gardening experience yet." syncable="YES"/>
+        <attribute name="numberPlantsPurchased" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="numberPlantsSaved" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="plantDetails" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plantName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plantPrice" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="GardeningLevel" positionX="-45" positionY="54" width="128" height="60"/>
+        <element name="PurchasedPlant" positionX="-45" positionY="0" width="128" height="105"/>
+        <element name="SavedPlant" positionX="-45" positionY="27" width="128" height="135"/>
+    </elements>
+</model>
