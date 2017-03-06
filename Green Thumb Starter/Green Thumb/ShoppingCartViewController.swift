@@ -31,9 +31,9 @@ class ShoppingCartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let pastPurchasesButton = UIBarButtonItem(image: pastPurchasesImage, style: .plain, target: self, action: #selector(viewPastPurchases(sender:)))
-        pastPurchasesButton.tintColor = Colors.grayColor
-        navigationItem.setRightBarButtonItems([pastPurchasesButton], animated: true)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.configureTotal), name: Notification.Name(rawValue: shoppingNotificationKey), object: nil)
+        
+        setNavigationButtons()
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         coreDataStack = appDelegate.coreDataStack
@@ -42,7 +42,7 @@ class ShoppingCartViewController: UIViewController {
         plantsFetch.returnsObjectsAsFaults = false
         loadData()
     }
-
+    
     override func viewDidLayoutSubviews() {
         configureButton(button: purchaseButton)
         configureButton(button: continueShoppingButton)
@@ -70,7 +70,7 @@ class ShoppingCartViewController: UIViewController {
         }  catch let error as NSError {
             print("Fetch error: \(error) description: \(error.userInfo)")
         }
-
+        
         itemsInCartTableView.reloadData()
     }
     
@@ -89,7 +89,7 @@ class ShoppingCartViewController: UIViewController {
     func viewPastPurchases(sender: AnyObject) {
         performSegue(withIdentifier: purchasesSegue, sender: self)
     }
-
+    
     func configureButton(button: UIButton) {
         button.tintColor = Colors.darkGreenColor
         button.setTitleColor(.white, for: .normal)
@@ -102,19 +102,25 @@ class ShoppingCartViewController: UIViewController {
         button.setTitleColor(Colors.darkGreenColor, for: .disabled)
     }
     
+    func setNavigationButtons() {
+        let pastPurchasesButton = UIBarButtonItem(image: pastPurchasesImage, style: .plain, target: self, action: #selector(viewPastPurchases(sender:)))
+        pastPurchasesButton.tintColor = Colors.grayColor
+        navigationItem.setRightBarButtonItems([pastPurchasesButton], animated: true)
+    }
+    
     // MARK: - Actions
     
     @IBAction func returnToShopping(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
-
+    
     @IBAction func checkoutCart(_ sender: Any) {
         // dictionary to hold plants purchased and number of plants for logging event
         var plantsPurchased : [String:Int] = [:]
         var plantsRepeatPurchase: [String:Int] = [:]
         
         for plant in allSavedPlants {
-
+            
             plantsPurchased[plant.plantName!] = Int(plant.numberPlantsSaved)
             if  plant.numberPlantsPurchased > 0 {
                 plantsRepeatPurchase[plant.plantName!] = Int(plant.numberPlantsSaved)
@@ -134,7 +140,7 @@ class ShoppingCartViewController: UIViewController {
             configureTotal()
         } catch let error as NSError {
             print("Saving error: \(error), description: \(error.userInfo)")
-            }
+        }
         
         Alerts.showAlert(title: "Done", message: "Purchased Items", viewController: self)
     }
@@ -160,24 +166,24 @@ extension ShoppingCartViewController: UITableViewDelegate, UITableViewDataSource
         cell.currentPlant = currentPlant
         cell.populateCartCell(currentPlant: currentPlant!)
         configureTotal()
-
+        
         return cell
         
     }
-
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-            currentPlant = allSavedPlants[indexPath.item]
-            guard let plantToRemove = currentPlant, editingStyle == .delete else { return }
+        currentPlant = allSavedPlants[indexPath.item]
+        guard let plantToRemove = currentPlant, editingStyle == .delete else { return }
         
-            // delete plant and refresh table
-            managedContext.delete(plantToRemove)
-            do {
-                try managedContext.save()
-                loadData()
-            } catch let error as NSError {
-                print("Saving error: \(error), description: \(error.userInfo)")
-            }
-            configureTotal()
+        // delete plant and refresh table
+        managedContext.delete(plantToRemove)
+        do {
+            try managedContext.save()
+            loadData()
+        } catch let error as NSError {
+            print("Saving error: \(error), description: \(error.userInfo)")
+        }
+        configureTotal()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
