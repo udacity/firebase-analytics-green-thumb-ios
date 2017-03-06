@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class CartTableViewCell: UITableViewCell {
-
+    
     // MARK: - Properties
     
     var currentPlant : SavedPlant?
@@ -29,6 +29,7 @@ class CartTableViewCell: UITableViewCell {
         let currentPlantNumber = currentPlant?.numberPlantsSaved
         let currentPlantPrice = currentPlant?.plantPrice
         totalPrice.text = String(currentPlantNumber!*currentPlantPrice!)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: shoppingNotificationKey), object: nil)
     }
     
     func populateCartCell(currentPlant: SavedPlant) {
@@ -37,6 +38,8 @@ class CartTableViewCell: UITableViewCell {
         let currentPlantName = currentPlant.plantName ?? "Name Missing"
         let currentPlantNumber = currentPlant.numberPlantsSaved
         let currentPlantPrice = currentPlant.plantPrice
+        print("currentPlantPrice \(currentPlantPrice)")
+        print("currentPlantNumber \(currentPlantNumber)")
         plantName.text = currentPlantName
         totalPrice.text = String(currentPlantNumber*currentPlantPrice)
         selectNumOfPlantPicker.selectRow(Int((currentPlant.numberPlantsSaved)-1), inComponent: 0, animated: true)
@@ -70,7 +73,7 @@ extension CartTableViewCell: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerData.count
     }
@@ -95,7 +98,7 @@ extension CartTableViewCell: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var pickerLabel = view as! UILabel!
-
+        
         if view == nil {
             pickerLabel = UILabel()
             pickerLabel?.backgroundColor = .gray
@@ -103,7 +106,7 @@ extension CartTableViewCell: UIPickerViewDelegate, UIPickerViewDataSource {
             pickerLabel?.layer.borderWidth = 3
             pickerLabel?.layer.borderColor = UIColor.black.cgColor
         }
-
+        
         let titleData = pickerData[row]
         pickerLabel?.text = titleData.description
         pickerLabel!.textAlignment = .center

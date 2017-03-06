@@ -11,9 +11,6 @@
 		361699DB1DF2105300128D47 /* PlantObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361699DA1DF2105300128D47 /* PlantObject.swift */; };
 		3633C9BD1E23E0EF0072866B /* ClientAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3633C9BC1E23E0EF0072866B /* ClientAnalytics.swift */; };
 		3640105B1DEF89330093CE0E /* PlantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3640105A1DEF89330093CE0E /* PlantDetailViewController.swift */; };
-		3655C70B1E5FC00D0000D4E5 /* analytics-practice-64630-firebase-crashreporting-ij51c-a75fcbae13.json in Resources */ = {isa = PBXBuildFile; fileRef = 3655C70A1E5FC00D0000D4E5 /* analytics-practice-64630-firebase-crashreporting-ij51c-a75fcbae13.json */; };
-		3655C70D1E5FC04A0000D4E5 /* analytics-practice-64630-firebase-crashreporting-ij51c-a75fcbae13.json in Resources */ = {isa = PBXBuildFile; fileRef = 3655C70C1E5FC04A0000D4E5 /* analytics-practice-64630-firebase-crashreporting-ij51c-a75fcbae13.json */; };
-		3667AC951E53CFAE00EA8D78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3667AC941E53CFAE00EA8D78 /* GoogleService-Info.plist */; };
 		366F12001E52058E0048DC63 /* RemoteConfigDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F11FF1E52058E0048DC63 /* RemoteConfigDefaults.swift */; };
 		368434E41DDD288F00189EDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368434E31DDD288F00189EDB /* AppDelegate.swift */; };
 		368434E61DDD288F00189EDB /* PlantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368434E51DDD288F00189EDB /* PlantTableViewController.swift */; };
@@ -56,12 +53,8 @@
 		0D7FB9C0E680FF15636F3BB1 /* Pods_Green_ThumbTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Green_ThumbTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		361699D31DF0BA1900128D47 /* PlantsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsTableViewCell.swift; sourceTree = "<group>"; };
 		361699DA1DF2105300128D47 /* PlantObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantObject.swift; sourceTree = "<group>"; };
-		363272611E53889B00CAE22F /* Green Thumb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Green Thumb.entitlements"; sourceTree = "<group>"; };
 		3633C9BC1E23E0EF0072866B /* ClientAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientAnalytics.swift; sourceTree = "<group>"; };
 		3640105A1DEF89330093CE0E /* PlantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantDetailViewController.swift; sourceTree = "<group>"; };
-		3655C70A1E5FC00D0000D4E5 /* analytics-practice-64630-firebase-crashreporting-ij51c-a75fcbae13.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "analytics-practice-64630-firebase-crashreporting-ij51c-a75fcbae13.json"; sourceTree = "<group>"; };
-		3655C70C1E5FC04A0000D4E5 /* analytics-practice-64630-firebase-crashreporting-ij51c-a75fcbae13.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "analytics-practice-64630-firebase-crashreporting-ij51c-a75fcbae13.json"; sourceTree = "<group>"; };
-		3667AC941E53CFAE00EA8D78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		366F11FF1E52058E0048DC63 /* RemoteConfigDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteConfigDefaults.swift; sourceTree = "<group>"; };
 		368434E01DDD288F00189EDB /* Green Thumb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Green Thumb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		368434E31DDD288F00189EDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,7 +129,6 @@
 				369D3AB81E3BC89F004ADD8F /* AlertFunctions.swift */,
 				3633C9BC1E23E0EF0072866B /* ClientAnalytics.swift */,
 				366F11FF1E52058E0048DC63 /* RemoteConfigDefaults.swift */,
-				3655C70A1E5FC00D0000D4E5 /* analytics-practice-64630-firebase-crashreporting-ij51c-a75fcbae13.json */,
 			);
 			name = "Firebase Analytics";
 			sourceTree = "<group>";
@@ -166,7 +158,6 @@
 		368434E21DDD288F00189EDB /* Green Thumb */ = {
 			isa = PBXGroup;
 			children = (
-				363272611E53889B00CAE22F /* Green Thumb.entitlements */,
 				368434E31DDD288F00189EDB /* AppDelegate.swift */,
 				361699D91DF0BEDF00128D47 /* ViewControllers */,
 				36DFE1CB1E1C613500FB7385 /* TableViewCells */,
@@ -174,12 +165,10 @@
 				36F3C0961E25777000B19AB6 /* Colors.swift */,
 				36ECF59D1E1DA0C100620D47 /* CoreDataStack.swift */,
 				361699DA1DF2105300128D47 /* PlantObject.swift */,
-				3655C70C1E5FC04A0000D4E5 /* analytics-practice-64630-firebase-crashreporting-ij51c-a75fcbae13.json */,
 				369D3AB61E3BC83A004ADD8F /* UserDefaultsExtension.swift */,
 				368434E71DDD288F00189EDB /* Main.storyboard */,
 				368434EA1DDD288F00189EDB /* Assets.xcassets */,
 				368434EC1DDD288F00189EDB /* LaunchScreen.storyboard */,
-				3667AC941E53CFAE00EA8D78 /* GoogleService-Info.plist */,
 				368434EF1DDD288F00189EDB /* Info.plist */,
 				36ECF5A91E1ED28900620D47 /* SavedPlants.xcdatamodeld */,
 			);
@@ -305,11 +294,10 @@
 				TargetAttributes = {
 					368434DF1DDD288F00189EDB = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 739D5HF686;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.SafariKeychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -351,9 +339,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				368434EE1DDD288F00189EDB /* LaunchScreen.storyboard in Resources */,
-				3667AC951E53CFAE00EA8D78 /* GoogleService-Info.plist in Resources */,
-				3655C70D1E5FC04A0000D4E5 /* analytics-practice-64630-firebase-crashreporting-ij51c-a75fcbae13.json in Resources */,
-				3655C70B1E5FC00D0000D4E5 /* analytics-practice-64630-firebase-crashreporting-ij51c-a75fcbae13.json in Resources */,
 				368434EB1DDD288F00189EDB /* Assets.xcassets in Resources */,
 				368434E91DDD288F00189EDB /* Main.storyboard in Resources */,
 			);
@@ -432,7 +417,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:624266487175:ios:188eaa7a85ba4926\n\n# Replace the /Path/To/ServiceAccount.json with the path to the key you just downloaded\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym \"/Users/personjennifer/Documents/ios hackathon/firebase-analytics-green-thumb-ios/Green Thumb/Green Thumb/Analytics Practice-e8fb74f0f4da.json\"";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -612,11 +597,11 @@
 			baseConfigurationReference = 48CFF4B57BA60CD368B7B33A /* Pods-Green Thumb.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Green Thumb/Green Thumb.entitlements";
-				DEVELOPMENT_TEAM = 739D5HF686;
+				CODE_SIGN_ENTITLEMENTS = "";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Green Thumb/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.analyticspractice;
+				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.greenthumb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -627,11 +612,11 @@
 			baseConfigurationReference = 3A206854858ACCAD773FBE01 /* Pods-Green Thumb.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Green Thumb/Green Thumb.entitlements";
-				DEVELOPMENT_TEAM = 739D5HF686;
+				CODE_SIGN_ENTITLEMENTS = "";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Green Thumb/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.analyticspractice;
+				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.greenthumb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

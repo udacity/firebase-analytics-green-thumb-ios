@@ -22,11 +22,9 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>BundleID</string>
+			<string></string>
 			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.analyticspractice</string>
-			</array>
+			<array/>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>

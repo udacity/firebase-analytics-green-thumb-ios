@@ -18,6 +18,7 @@ let checkoutSegue = "checkoutSegue"
 let gardeningLevelSegue = "gardeningLevelSegue"
 let plantDetailSegue = "plantDetailSegue"
 let purchasesSegue = "purchasesSegue"
+let shoppingNotificationKey = "com.greenthumb.notificationKey"
 let pastPurchasesImage = #imageLiteral(resourceName: "ic_history")
 let shoppingCartImage = #imageLiteral(resourceName: "ic_shopping_cart")
 let thumbImage = #imageLiteral(resourceName: "ic_thumb_up")
