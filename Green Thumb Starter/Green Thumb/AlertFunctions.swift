@@ -87,26 +87,21 @@ class Alerts {
         
         let oneAction = UIAlertAction(title: gardeningLevelDescription[0], style: .default) { _ in
             self.saveExperience(currentGardeningFrequency: gardeningLevelDescription[0], callingVC: viewController)
-            ClientAnalytics.sendUserPropertyGardeningAbility(gardeningExperience: gardeningLevelUserProperty[0])
         }
         let twoAction = UIAlertAction(title: gardeningLevelDescription[1], style: .default) { _ in
             self.saveExperience(currentGardeningFrequency: gardeningLevelDescription[1], callingVC: viewController)
-            ClientAnalytics.sendUserPropertyGardeningAbility(gardeningExperience: gardeningLevelUserProperty[1])
         }
         
         let threeAction = UIAlertAction(title: gardeningLevelDescription[2], style: .default) { _ in
             self.saveExperience(currentGardeningFrequency: gardeningLevelDescription[2], callingVC: viewController)
-            ClientAnalytics.sendUserPropertyGardeningAbility(gardeningExperience: gardeningLevelUserProperty[2])
         }
         
         let fourAction = UIAlertAction(title: gardeningLevelDescription[3], style: .default) { _ in
             self.saveExperience(currentGardeningFrequency: gardeningLevelDescription[3], callingVC: viewController)
-            ClientAnalytics.sendUserPropertyGardeningAbility(gardeningExperience: gardeningLevelUserProperty[3])
         }
         
         let fiveAction = UIAlertAction(title: gardeningLevelDescription[4], style: .default) { _ in
             self.saveExperience(currentGardeningFrequency: gardeningLevelDescription[4], callingVC: viewController)
-            ClientAnalytics.sendUserPropertyGardeningAbility(gardeningExperience: gardeningLevelUserProperty[4])
         }
         
         let cancelAction = UIAlertAction(title: gardeningLevelDescription[5], style: .cancel) { _ in
