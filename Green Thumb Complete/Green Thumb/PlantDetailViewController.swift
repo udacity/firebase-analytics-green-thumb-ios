@@ -84,12 +84,12 @@ class PlantDetailViewController: UIViewController {
                 try managedContext.save()
             }
             
+            // log plant is added to cart
+            ClientAnalytics.sendAddToCartEvent(itemAdded: plantNameToSave, buyAgain: false)
+            
         }  catch let error as NSError {
             print("Fetch error: \(error) description: \(error.userInfo)")
         }
-        
-        // log plant is added to cart
-        ClientAnalytics.sendAddToCartEvent(itemAdded: plantNameToSave, buyAgain: false)
     }
 
     @IBAction func addToCart(_ sender: Any) {
