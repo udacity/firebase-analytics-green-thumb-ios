@@ -1,5 +1,5 @@
 //
-//  GardenObject.swift
+//  PlantObject.swift
 //  Green Thumb
 //
 //  Created by Jennifer Person on 12/2/16.
@@ -32,9 +32,7 @@ struct PlantObject {
         self.name = name
         self.details = details
         self.price = price
-    
     }
-
 }
 
 // Make a round button
