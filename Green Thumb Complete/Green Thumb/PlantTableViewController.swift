@@ -20,7 +20,7 @@ class PlantTableViewController: UIViewController {
     var managedContext: NSManagedObjectContext!
     var currentPlant : SavedPlant?
     var plantDescriptionsValue: String?
-    let plantDescrptions = "plant_descriptions"
+    let plantDescriptions = "plant_descriptions"
     var remoteConfig: FIRRemoteConfig!
     let basicConfig = "basic"
     let advancedConfig = "advanced"
@@ -84,7 +84,7 @@ class PlantTableViewController: UIViewController {
     
     func setRemoteConfigDefaults() {
         let defaultValues: [String:NSObject] = [
-            plantDescrptions : basicConfig as NSObject
+            plantDescriptions : basicConfig as NSObject
         ]
         
         FIRRemoteConfig.remoteConfig().setDefaults(defaultValues)
@@ -109,7 +109,7 @@ class PlantTableViewController: UIViewController {
             if status == .success {
                 print("Config fetched!")
                 self.remoteConfig.activateFetched()
-                let plantDesc = self.remoteConfig[self.plantDescrptions]
+                let plantDesc = self.remoteConfig[self.plantDescriptions]
                 if plantDesc.source != .static {
                     self.plantDescriptionsValue = plantDesc.stringValue!
                     print("Using the array: \(self.plantDescriptionsValue)")

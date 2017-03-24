@@ -20,7 +20,7 @@ class PlantTableViewController: UIViewController {
     var managedContext: NSManagedObjectContext!
     var currentPlant : SavedPlant?
     var plantDescriptionsValue: String?
-    let plantDescrptions = "plant_descriptions"
+    let plantDescriptions = "plant_descriptions"
     var remoteConfig: FIRRemoteConfig!
     let basicConfig = "basic"
     let advancedConfig = "advanced"
