@@ -56,8 +56,6 @@ class GardeningLevelViewController: UIViewController {
             print("Fetch error: \(error) description: \(error.userInfo)")
         }
         
-        print("load data called")
-        
     }
 
 

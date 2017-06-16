@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var coreDataStack = CoreDataStack(modelName: "SavedPlants")
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-                FIRApp.configure()
+                FirebaseApp.configure()
         guard let navController = window?.rootViewController as? UINavigationController,
             let viewController = navController.topViewController as? PlantTableViewController else {
                 return true
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-        guard let dynamicLinks = FIRDynamicLinks.dynamicLinks() else {
+        guard let dynamicLinks = DynamicLinks.dynamicLinks() else {
             return false
         }
         
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         coreDataStack.saveContext()
     }
 
-    func handleIncomingDynamicLink(dynamicLink: FIRDynamicLink) {
+    func handleIncomingDynamicLink(dynamicLink: DynamicLink) {
         let lastComponent = dynamicLink.url!.lastPathComponent
         
         if let rowIndex = Int(lastComponent) {

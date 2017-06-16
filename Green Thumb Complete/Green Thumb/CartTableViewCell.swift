@@ -38,8 +38,6 @@ class CartTableViewCell: UITableViewCell {
         let currentPlantName = currentPlant.plantName ?? "Name Missing"
         let currentPlantNumber = currentPlant.numberPlantsSaved
         let currentPlantPrice = currentPlant.plantPrice
-        print("currentPlantPrice \(currentPlantPrice)")
-        print("currentPlantNumber \(currentPlantNumber)")
         plantName.text = currentPlantName
         totalPrice.text = String(currentPlantNumber*currentPlantPrice)
         selectNumOfPlantPicker.selectRow(Int((currentPlant.numberPlantsSaved)-1), inComponent: 0, animated: true)

@@ -39,9 +39,7 @@ class Alerts {
     func saveExperience(currentGardeningFrequency: String, callingVC: AnyObject?) {
         
         do {
-            print("plant name \(gardeningFrequecy?.plantName)")
             gardeningFrequecy!.gardeningLevel = currentGardeningFrequency
-            print("garden frequency \(gardeningFrequecy!.gardeningLevel)")
             try managedContext.save()
         } catch let error as NSError {
             print("Saving error: \(error), description: \(error.userInfo)")
@@ -70,8 +68,6 @@ class Alerts {
             let results = try self.managedContext.fetch(self.plantsFetch)
             if results.count > 0 {
                 gardeningFrequecy = results.first
-                print("plant pulled from core data \(gardeningFrequecy!.plantName)")
-                print("freqnecy pulled from core data \(gardeningFrequecy!.gardeningLevel)")
                 hasGardeningFrequency = true
             } else {
                 gardeningFrequecy = SavedPlant(context: managedContext)

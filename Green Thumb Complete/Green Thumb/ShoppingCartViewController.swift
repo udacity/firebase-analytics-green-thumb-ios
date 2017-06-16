@@ -84,7 +84,6 @@ class ShoppingCartViewController: UIViewController {
             
             total += Int(amount)*Int(price)
         }
-        print(total.description)
         totalPriceAllItemsLabel.text = total.description
     }
     

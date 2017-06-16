@@ -22,37 +22,37 @@ class ClientAnalytics {
 
     // log when a plant is added to a cart and which plant is added
     static func sendAddToCartEvent(itemAdded: String, buyAgain: Bool) {
-        FIRAnalytics.logEvent(withName: kFIREventAddToCart, parameters: [kFIRParameterItemCategory: itemCategory as NSObject,
-            kFIRParameterItemID: itemAdded as NSObject])
+        Analytics.logEvent(AnalyticsEventAddToCart, parameters: [AnalyticsParameterItemCategory: itemCategory as NSObject,
+            AnalyticsParameterItemID: itemAdded as NSObject])
     }
     
     // log when a plant is selected from the list of plants
     static func sendPlantViewedEvent(itemViewed: String) {
-        FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [kFIRParameterItemName: itemViewed as NSObject])
+        Analytics.logEvent(AnalyticsEventViewItem, parameters: [AnalyticsParameterItemName: itemViewed as NSObject])
     }
     
     // log when plants are purchased and which plants were purchased and how many of each plant was purchased
     static func sendPurchaseItemsEvent(itemsPurchased: [String: Int]) {
         for item in itemsPurchased {
-            FIRAnalytics.logEvent(withName: kFIREventEcommercePurchase, parameters: [kFIRParameterItemName: item.key as NSObject, kFIRParameterValue: item.value as NSObject, kFIRParameterCurrency: "XXX" as NSObject])
+            Analytics.logEvent(AnalyticsEventEcommercePurchase, parameters: [AnalyticsParameterItemName: item.key as NSObject, AnalyticsParameterValue: item.value as NSObject, AnalyticsParameterCurrency: "XXX" as NSObject])
         }
     }
     
     // log when a user purchases a plant they had purchased in the past
     static func sendPurchaseItemsAgainEvent(itemsPurchased: [String: Int]) {
         for item in itemsPurchased {
-            FIRAnalytics.logEvent(withName: eventPurchaseAgain, parameters: [logItemPurchased: item.key as NSObject, logNumberOfItem: item.value as NSObject])
+            Analytics.logEvent(eventPurchaseAgain, parameters: [logItemPurchased: item.key as NSObject, logNumberOfItem: item.value as NSObject])
         }
     }
     
     // log when a plant is removed from the shopping cart.
     static func sendRemoveFromCartEvent(itemRemoved: String) {
-        FIRAnalytics.logEvent(withName: removeFromCart, parameters: [kFIRParameterItemID: itemRemoved as NSObject])
+        Analytics.logEvent(removeFromCart, parameters: [AnalyticsParameterItemID: itemRemoved as NSObject])
     }
     
     // log gardening_experience user property
     static func sendUserPropertyGardeningAbility(gardeningExperience: String) {
-        FIRAnalytics.setUserPropertyString(gardeningExperience.description, forName: ClientAnalytics.gardeningExp)
+        Analytics.setUserProperty(gardeningExperience.description, forName: ClientAnalytics.gardeningExp)
     }
     
 }

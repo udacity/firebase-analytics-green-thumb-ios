@@ -21,7 +21,7 @@ class PlantTableViewController: UIViewController {
     var currentPlant : SavedPlant?
     var plantDescriptionsValue: String?
     let plantDescriptions = "plant_descriptions"
-    var remoteConfig: FIRRemoteConfig!
+    var remoteConfig: RemoteConfig!
     let basicConfig = "basic"
     let advancedConfig = "advanced"
     
@@ -87,13 +87,13 @@ class PlantTableViewController: UIViewController {
             plantDescriptions : basicConfig as NSObject
         ]
         
-        FIRRemoteConfig.remoteConfig().setDefaults(defaultValues)
+        RemoteConfig.remoteConfig().setDefaults(defaultValues)
     }
     
     func configureRemoteConfig() {
         // create remote config setting to enable developer mode
-        let remoteConfigSettings = FIRRemoteConfigSettings(developerModeEnabled: true)
-        remoteConfig = FIRRemoteConfig.remoteConfig()
+        let remoteConfigSettings = RemoteConfigSettings(developerModeEnabled: true)
+        remoteConfig = RemoteConfig.remoteConfig()
         remoteConfig.configSettings = remoteConfigSettings!
     }
     
@@ -112,7 +112,7 @@ class PlantTableViewController: UIViewController {
                 let plantDesc = self.remoteConfig[self.plantDescriptions]
                 if plantDesc.source != .static {
                     self.plantDescriptionsValue = plantDesc.stringValue!
-                    print("Using the array: \(self.plantDescriptionsValue)")
+                    print("Using the array: \(String(describing: self.plantDescriptionsValue))")
                     if (self.plantDescriptionsValue == self.advancedConfig) {
                         plantsArray = advancedArray
                         self.plantsTableView.reloadData()
@@ -122,7 +122,7 @@ class PlantTableViewController: UIViewController {
             } else {
                self.plantsTableView.reloadData()
                 print("Config not fetched")
-                print("Error \(error)")
+                print("Error \(String(describing: error))")
             }
         }
     }
